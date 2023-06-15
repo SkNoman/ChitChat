@@ -3,9 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.Login">
+    tools:context=".ui.login_sign_up.Login">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:id="@+id/demoTxtLogin"
         android:layout_width="match_parent"

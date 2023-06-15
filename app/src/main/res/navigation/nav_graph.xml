@@ -12,7 +12,7 @@
         tools:layout="@layout/fragment_splash" />
     <fragment
         android:id="@+id/login"
-        android:name="com.noman.chitchat.ui.Login"
+        android:name="com.noman.chitchat.ui.login_sign_up.Login"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" />
 </navigation>

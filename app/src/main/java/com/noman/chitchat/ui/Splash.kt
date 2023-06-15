@@ -2,6 +2,7 @@ package com.noman.chitchat.ui
 
 import android.os.Bundle
 import android.view.View
+import android.view.WindowManager
 import androidx.navigation.fragment.findNavController
 import com.noman.chitchat.R
 import com.noman.chitchat.base.BaseFragmentWithBinding
@@ -12,8 +13,9 @@ class Splash : BaseFragmentWithBinding<FragmentSplashBinding>
 {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.demoTxt.text = "Hello This is splash screeen"
-        binding.demoTxt.setOnClickListener {
+        requireActivity().window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
+        binding.ivGirlTexting.setOnClickListener{
             findNavController().navigate(R.id.login)
         }
     }
