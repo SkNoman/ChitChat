@@ -2,6 +2,7 @@ package com.noman.chitchat
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.VIEW_MODEL_STORE_OWNER_KEY
@@ -22,7 +23,9 @@ class MainActivity : AppCompatActivity() {
         navController = findNavController(R.id.nav_host_fragment_content_main)
         drawerLayout = binding.drawerLayout
         window.statusBarColor = getColor(R.color.white)
+
         binding.ivBack.setOnClickListener{
+            Log.e("nlog","Clicked")
             navController.popBackStack()
         }
         navController.addOnDestinationChangedListener { controller, destination, arguments ->
@@ -31,9 +34,13 @@ class MainActivity : AppCompatActivity() {
                     binding.ivBack.visibility = View.GONE
                 }
                 R.id.login ->{
+                    binding.ivBack.visibility = View.GONE
+                }
+                else->{
                     binding.ivBack.visibility = View.VISIBLE
                 }
             }
         }
+
     }
 }
