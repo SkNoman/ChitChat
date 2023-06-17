@@ -20,4 +20,9 @@
         android:name="com.noman.chitchat.ui.login_sign_up.SignUp"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" />
+    <fragment
+        android:id="@+id/home2"
+        android:name="com.noman.chitchat.ui.chat.Home"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
 </navigation>

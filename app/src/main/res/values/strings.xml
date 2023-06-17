@@ -17,6 +17,6 @@
     <string name="phone">Phone</string>
     <string name="full_name">Full Name</string>
     <string name="confirm_password">Confirm Password</string>
-    <string name="by_singing_up_you_re_agree_to_our_terms_and_conditions_and_privacy_policy">By singing up you\'re agree to our<b><font color="#FF00FF">Terms Conditions</font> </b> and\n<b><font color="#FF00FF">Privacy Policy</font></b></string>
+    <string name="by_singing_up_you_re_agree_to_our_terms_and_conditions_and_privacy_policy">By singing up you\'re agree to our <b><font color="#12206F">Terms Conditions</font> </b>\nand<b><font color="#12206F"> Privacy Policy</font></b></string>
     <string name="have_an_account">Have an account?</string>
 </resources>

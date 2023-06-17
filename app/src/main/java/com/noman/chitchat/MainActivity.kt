@@ -1,14 +1,11 @@
 package com.noman.chitchat
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
-import androidx.lifecycle.VIEW_MODEL_STORE_OWNER_KEY
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
-import com.google.android.material.navigation.NavigationView
 import com.noman.chitchat.databinding.ActivityMainBinding
 
 private lateinit var binding: ActivityMainBinding
@@ -25,7 +22,6 @@ class MainActivity : AppCompatActivity() {
         window.statusBarColor = getColor(R.color.white)
 
         binding.ivBack.setOnClickListener{
-            Log.e("nlog","Clicked")
             navController.popBackStack()
         }
         navController.addOnDestinationChangedListener { controller, destination, arguments ->
