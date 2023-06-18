@@ -22,7 +22,7 @@ class SignUp : BaseFragmentWithBinding<FragmentSignUpBinding>(
         super.onViewCreated(view, savedInstanceState)
 
         auth = FirebaseAuth.getInstance()
-
+        dbRef = FirebaseDatabase.getInstance().reference
         binding.btnSignUp.setOnClickListener{
             if (validateSignUp() == "OK"){
                 signUp(binding.etFullName.text.toString(),
@@ -54,7 +54,7 @@ class SignUp : BaseFragmentWithBinding<FragmentSignUpBinding>(
     }
 
     private fun addUserToDatabase(name: String, phone: String, email: String, uid: String) {
-        dbRef = FirebaseDatabase.getInstance().getReference()
+
         dbRef.child("users").child(uid).setValue(User.Users(name,phone,email,uid,
             "https://img.icons8.com/?size=512&id=91244&format=png"))
     }
