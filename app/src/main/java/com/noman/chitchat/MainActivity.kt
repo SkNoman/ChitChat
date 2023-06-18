@@ -8,16 +8,13 @@ import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import com.noman.chitchat.databinding.ActivityMainBinding
 
-private lateinit var binding: ActivityMainBinding
-private lateinit var navController: NavController
 private lateinit var drawerLayout: DrawerLayout
-
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        val binding: ActivityMainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        navController = findNavController(R.id.nav_host_fragment_content_main)
+        val navController: NavController = findNavController(R.id.nav_host_fragment_content_main)
         drawerLayout = binding.drawerLayout
         window.statusBarColor = getColor(R.color.white)
 
