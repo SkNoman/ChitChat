@@ -25,7 +25,7 @@ class UserHorizontalListAdapter(
         val userContent: User.Users = content[position]
         holder.bind(userContent)
         holder.itemView.setOnClickListener{
-            onClickUserIcon.onClickUserIcon(userContent.id)
+            onClickUserIcon.onClickUserIcon(userContent.name)
         }
     }
 
@@ -33,7 +33,7 @@ class UserHorizontalListAdapter(
         return content.size
     }
     interface OnClickUserIcon{
-        fun onClickUserIcon(id:Int)
+        fun onClickUserIcon(name:String)
     }
 }
 
@@ -41,6 +41,6 @@ class UserListIconItemHolder(inflater: LayoutInflater, parent: ViewGroup):
     RecyclerView.ViewHolder(inflater.inflate(R.layout.layout_horizontal_user_list,parent,false)){
     private var icon: ImageView = itemView.findViewById(R.id.userIcon)
     fun bind(item:User.Users){
-        icon.setImageResource(item.image)
+       // icon.setImageResource(item.image)
     }
 }

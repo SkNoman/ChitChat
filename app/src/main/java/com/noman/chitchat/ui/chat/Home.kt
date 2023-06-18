@@ -27,14 +27,15 @@ class Home : BaseFragmentWithBinding<FragmentHomeBinding>(
             false
         )
         val userList = mutableListOf<User.Users>()
-        userList.add(User.Users(1,"Afia","afai22@gamilc.com","01718228277", R.drawable.google))
+        userList.add(User.Users("Afia","afia22@gmail.com","01728232832","kdsjfksdjfksj","kjsdkfjsdk"))
+      /*  userList.add(User.Users(1,"Afia","afai22@gamilc.com","01718228277", R.drawable.google))
         userList.add(User.Users(2,"Orin","afai22@gamilc.com","01718228277",R.drawable.baseline_lock_reset_24))
         userList.add(User.Users(3,"Enni","afai22@gamilc.com","01718228277",R.drawable.baseline_arrow_back_24))
         userList.add(User.Users(4,"Tuna","afai22@gamilc.com","01718228277",R.drawable.google))
         userList.add(User.Users(5,"Afia","afai22@gamilc.com","01718228277", R.drawable.google))
         userList.add(User.Users(6,"Orin","afai22@gamilc.com","01718228277",R.drawable.baseline_lock_reset_24))
         userList.add(User.Users(7,"Enni","afai22@gamilc.com","01718228277",R.drawable.baseline_arrow_back_24))
-        userList.add(User.Users(8,"Tuna","afai22@gamilc.com","01718228277",R.drawable.google))
+        userList.add(User.Users(8,"Tuna","afai22@gamilc.com","01718228277",R.drawable.google))*/
         binding.horizontalUserListRecyclerView.layoutManager =
             LinearLayoutManager(activity,LinearLayoutManager.HORIZONTAL,false)
         binding.horizontalUserListRecyclerView.adapter =
@@ -42,7 +43,7 @@ class Home : BaseFragmentWithBinding<FragmentHomeBinding>(
 
     }
 
-    override fun onClickUserIcon(id: Int) {
-        Toast.makeText(requireContext(),"Id: $id",Toast.LENGTH_SHORT).show()
+    override fun onClickUserIcon(name: String) {
+        Toast.makeText(requireContext(),"Name: $name",Toast.LENGTH_SHORT).show()
     }
 }
