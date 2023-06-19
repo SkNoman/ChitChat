@@ -56,7 +56,7 @@ class SignUp : BaseFragmentWithBinding<FragmentSignUpBinding>(
     private fun addUserToDatabase(name: String, phone: String, email: String, uid: String) {
 
         dbRef.child("users").child(uid).setValue(User.Users(name,phone,email,uid,
-            "https://img.icons8.com/?size=512&id=91244&format=png"))
+            ""))
     }
 
     private fun validateSignUp():String {

@@ -5,8 +5,8 @@ data class User(
 ){
     data class Users(
         val name: String,
-        val email: String,
         val phone: String,
+        val email: String,
         val uid: String,
         val image: String
     )

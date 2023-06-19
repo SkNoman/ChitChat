@@ -51,6 +51,8 @@ class Login : BaseFragmentWithBinding<FragmentLoginBinding>
             .addOnCompleteListener(requireActivity()) { task ->
                 if (task.isSuccessful) {
                     Toast.makeText(requireContext(),"Login In Successful",Toast.LENGTH_SHORT).show()
+                    binding.etPassLogin.text=null
+                    binding.etEmailLogin.text=null
                     findNavController().navigate(R.id.home2)
                 }else {
                     Toast.makeText(requireContext(),"Login Failed: ${task.exception}",Toast.LENGTH_SHORT).show()

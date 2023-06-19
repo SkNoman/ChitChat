@@ -53,10 +53,12 @@
         android:layout_width="@dimen/_40dp"
         android:layout_height="@dimen/_40dp"
         android:layout_marginBottom="32dp"
+        app:layout_constraintVertical_bias="2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent=".50"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ivGirlTexting"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/loading" />
