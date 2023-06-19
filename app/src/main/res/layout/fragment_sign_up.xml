@@ -94,6 +94,27 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etPhone" />
+        <EditText
+            android:id="@+id/etUploadImage"
+            android:background="@drawable/edit_text_bg_login"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_50dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:padding="14dp"
+            android:inputType="none"
+            android:ems="10"
+            android:fontFamily="serif"
+            android:hint="@string/image"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:drawablePadding="@dimen/_10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etEmailSignUp"
+            app:drawableStartCompat="@drawable/baseline_image_24"
+            android:focusable="false" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/etPasswordFldSignUp"
@@ -108,7 +129,7 @@
             app:hintEnabled="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etEmailSignUp"
+            app:layout_constraintTop_toBottomOf="@+id/etUploadImage"
             app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -170,7 +191,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-
             android:layout_marginEnd="16dp"
             android:text="@string/by_singing_up_you_re_agree_to_our_terms_and_conditions_and_privacy_policy"
             app:layout_constraintEnd_toEndOf="parent"
@@ -226,6 +246,32 @@
                 android:textColor="@color/txtColorDarkBlue"
                 android:textStyle="bold" />
         </LinearLayout>
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/ivUserImage"
+            android:layout_width="@dimen/_40dp"
+            android:layout_height="@dimen/_40dp"
+            android:layout_marginEnd="8dp"
+            app:riv_corner_radius="30dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="@+id/etUploadImage"
+            app:layout_constraintEnd_toEndOf="@+id/etUploadImage"
+            app:layout_constraintTop_toTopOf="@+id/etUploadImage"
+            tools:src="@tools:sample/avatars" />
+
+
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:backgroundTint="@color/green"
+            style="?android:attr/progressBarStyle"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

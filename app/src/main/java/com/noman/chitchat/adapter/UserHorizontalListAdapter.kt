@@ -7,7 +7,6 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.noman.chitchat.R
-import com.noman.chitchat.model.User
 import com.noman.chitchat.model.UserInfo
 
 class UserHorizontalListAdapter(

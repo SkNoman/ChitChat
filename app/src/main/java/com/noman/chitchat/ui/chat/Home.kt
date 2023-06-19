@@ -15,7 +15,6 @@ import com.google.firebase.database.ValueEventListener
 import com.noman.chitchat.R
 import com.noman.chitchat.adapter.MainChatUserListAdapter
 import com.noman.chitchat.adapter.UserHorizontalListAdapter
-import com.noman.chitchat.model.User
 import com.noman.chitchat.base.BaseFragmentWithBinding
 import com.noman.chitchat.databinding.FragmentHomeBinding
 import com.noman.chitchat.model.UserInfo
