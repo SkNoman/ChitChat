@@ -29,6 +29,9 @@ class MainActivity : AppCompatActivity() {
                 R.id.login ->{
                     binding.ivBack.visibility = View.GONE
                 }
+                R.id.conversation ->{
+                    binding.ivBack.visibility = View.GONE
+                }
                 else->{
                     binding.ivBack.visibility = View.VISIBLE
                 }

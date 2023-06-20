@@ -38,7 +38,9 @@ class Home : BaseFragmentWithBinding<FragmentHomeBinding>(
                 userInfoList.clear()
                 for (postSnapshot in snapshot.children){
                     val currentUser = postSnapshot.getValue(UserInfo.UserInfoList::class.java)
-                    userInfoList.add(currentUser!!)
+                    if (auth.currentUser?.uid != currentUser?.uid){
+                        userInfoList.add(currentUser!!)
+                    }
                 }
                 horizontalUserList(userInfoList)
                 verticalUserList(userInfoList)
@@ -92,7 +94,9 @@ class Home : BaseFragmentWithBinding<FragmentHomeBinding>(
         Toast.makeText(requireContext(),"Name: $name",Toast.LENGTH_SHORT).show()
     }
 
-    override fun onClickUser(uid: String) {
-        Toast.makeText(requireContext(),"Name: $uid",Toast.LENGTH_SHORT).show()
+    override fun onClickUser(userInfo: UserInfo.UserInfoList) {
+        //Toast.makeText(requireContext(),"Name: ${userInfo.name}",Toast.LENGTH_SHORT).show()
+        val action =HomeDirections.actionHome2ToConversation(userInfo)
+        findNavController().navigate(action)
     }
 }

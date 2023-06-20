@@ -100,10 +100,18 @@ class SignUp : BaseFragmentWithBinding<FragmentSignUpBinding>(
     }
 
     private fun validateSignUp():String {
-        if (binding.etEmailSignUp.text.isNullOrEmpty()){
+        if (binding.etFullName.text.isNullOrEmpty()){
+            return "Please enter your name"
+        }else if (binding.etPhone.text.isNullOrEmpty()){
+            return "Please enter your phone number"
+        }else if(binding.etPhone.text!!.length<11){
+            return "Please enter valid phone number"
+        }else if (binding.etEmailSignUp.text.isNullOrEmpty()){
             return "Please enter email"
         }else if(binding.etEmailSignUp.text!!.length < 15){
             return "Please enter valid email"
+        }else if (imageUri == null){
+            return "Please add image"
         }else if(binding.etPasswordSignUp.text.isNullOrEmpty()){
             return "Please enter password"
         }else if (binding.etPasswordSignUp.text!!.length < 6){

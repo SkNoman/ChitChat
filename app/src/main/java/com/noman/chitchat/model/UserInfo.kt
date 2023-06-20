@@ -1,24 +1,66 @@
 package com.noman.chitchat.model
 
-data class UserInfo (
-    val userInfoList: List<UserInfoList>
-        ){
-     class UserInfoList{
-        var email: String? = null
-        var image: String? = null
-        var name: String? = null
-        var phone: String? = null
-        var uid: String? = null
+import android.os.Parcel
+import android.os.Parcelable
 
-        constructor(){}
+data class UserInfo(val userInfoList: List<UserInfoList>) : Parcelable {
 
-        constructor(email:String,image:String,name:String,phone:String,uid:String){
-            this.email = email
-            this.image = image
-            this.name = name
-            this.phone = phone
-            this.uid = uid
+    constructor(parcel: Parcel) : this(parcel.createTypedArrayList(UserInfoList)!!)
+
+    override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeTypedList(userInfoList)
+    }
+
+    override fun describeContents(): Int {
+        return 0
+    }
+
+    companion object CREATOR : Parcelable.Creator<UserInfo> {
+        override fun createFromParcel(parcel: Parcel): UserInfo {
+            return UserInfo(parcel)
+        }
+
+        override fun newArray(size: Int): Array<UserInfo?> {
+            return arrayOfNulls(size)
         }
     }
 
+    data class UserInfoList(
+        var email: String? = null,
+        var image: String? = null,
+        var name: String? = null,
+        var phone: String? = null,
+        var uid: String? = null
+    ) : Parcelable {
+        constructor(parcel: Parcel) : this(
+            parcel.readString(),
+            parcel.readString(),
+            parcel.readString(),
+            parcel.readString(),
+            parcel.readString()
+        )
+
+        override fun writeToParcel(parcel: Parcel, flags: Int) {
+            parcel.writeString(email)
+            parcel.writeString(image)
+            parcel.writeString(name)
+            parcel.writeString(phone)
+            parcel.writeString(uid)
+        }
+
+        override fun describeContents(): Int {
+            return 0
+        }
+
+        companion object CREATOR : Parcelable.Creator<UserInfoList> {
+            override fun createFromParcel(parcel: Parcel): UserInfoList {
+                return UserInfoList(parcel)
+            }
+
+            override fun newArray(size: Int): Array<UserInfoList?> {
+                return arrayOfNulls(size)
+            }
+        }
+    }
 }
+

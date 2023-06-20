@@ -24,5 +24,18 @@
         android:id="@+id/home2"
         android:name="com.noman.chitchat.ui.chat.Home"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_home2_to_conversation"
+            app:destination="@id/conversation" />
+    </fragment>
+    <fragment
+        android:id="@+id/conversation"
+        android:name="com.noman.chitchat.ui.chat.Conversation"
+        android:label="fragment_conversation"
+        tools:layout="@layout/fragment_conversation" >
+        <argument
+            android:name="UserInfo"
+            app:argType="com.noman.chitchat.model.UserInfo$UserInfoList" />
+    </fragment>
 </navigation>

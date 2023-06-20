@@ -27,7 +27,7 @@ class MainChatUserListAdapter(
         val userContent: UserInfo.UserInfoList = content[position]
         holder.bind(userContent,mContext)
         holder.itemView.setOnClickListener{
-            onClickUser.onClickUser(userContent.uid!!)
+            onClickUser.onClickUser(content[position])
         }
     }
 
@@ -35,7 +35,7 @@ class MainChatUserListAdapter(
         return content.size
     }
     interface OnClickUser{
-        fun onClickUser(uid:String)
+        fun onClickUser(userInfo: UserInfo.UserInfoList)
     }
 }
 
