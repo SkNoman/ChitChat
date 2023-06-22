@@ -98,14 +98,17 @@
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/chatRecyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="1dp"
         app:layout_constraintBottom_toTopOf="@+id/etMessageInput"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/line" />
+        app:layout_constraintTop_toBottomOf="@+id/line"
+        tools:listitem="@layout/receive"
+        tools:itemCount="10"
+        />
 
     <EditText
         android:id="@+id/etMessageInput"
@@ -122,19 +125,20 @@
         android:inputType="text"
         android:padding="@dimen/_10dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageView5"
+        app:layout_constraintEnd_toStartOf="@+id/ivSentMessage"
         app:layout_constraintStart_toEndOf="@+id/imageView7"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+        app:layout_constraintTop_toBottomOf="@+id/chatRecyclerView" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/ivSentMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:src="@drawable/baseline_send_36"
         app:layout_constraintBottom_toBottomOf="@+id/etMessageInput"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/etMessageInput" />
+        app:layout_constraintTop_toTopOf="@+id/etMessageInput"
+        android:contentDescription="@string/app_name" />
 
     <ImageView
         android:id="@+id/imageView7"
@@ -144,7 +148,8 @@
         android:src="@drawable/baseline_image_36"
         app:layout_constraintBottom_toBottomOf="@+id/etMessageInput"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+        app:layout_constraintTop_toBottomOf="@+id/chatRecyclerView"
+        android:contentDescription="@string/app_name" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
