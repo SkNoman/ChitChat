@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -40,6 +41,10 @@ class Conversation : BaseFragmentWithBinding<FragmentConversationBinding>(
     var senderUserImage:String? =null
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        requireActivity().window.setFlags(WindowManager.LayoutParams.FLAG_SECURE,
+            WindowManager.LayoutParams.FLAG_SECURE);
+        mDbRef = FirebaseDatabase.getInstance().reference
         binding.ivBack.setOnClickListener{
             findNavController().popBackStack()
         }
@@ -51,7 +56,7 @@ class Conversation : BaseFragmentWithBinding<FragmentConversationBinding>(
 
         val receiverUid = result.uid
         val senderUid = FirebaseAuth.getInstance().currentUser?.uid
-        mDbRef = FirebaseDatabase.getInstance().reference
+
 
         mDbRef.child("users").child("$senderUid").addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
