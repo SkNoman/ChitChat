@@ -2,6 +2,7 @@ package com.noman.chitchat.ui.login_sign_up
 
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -40,7 +41,13 @@ class SignUp : BaseFragmentWithBinding<FragmentSignUpBinding>(
 
             if (validateSignUp() == "OK"){
                 binding.progressBar.visibility = View.VISIBLE
-                uploadImage()
+                //uploadImage()
+                signUp(binding.etFullName.text.toString(),
+                    binding.etPhone.text.toString() ,
+                    binding.etEmailSignUp.text.toString(),
+                    binding.etPasswordSignUp.text.toString(),
+                    "https://gaijinpot.scdn3.secure.raxcdn.com/app/uploads/sites/4/2015/02/sakura-1024x768.jpg"
+                )
             }else{
                 Toast.makeText(requireContext(),validateSignUp(), Toast.LENGTH_SHORT).show()
             }
@@ -66,6 +73,7 @@ class SignUp : BaseFragmentWithBinding<FragmentSignUpBinding>(
                     }
                 }else{
                     binding.progressBar.visibility =View.GONE
+                    Log.d("SignUp","Image Upload Exception: ${task.exception}")
                     Toast.makeText(requireContext(),task.exception.toString(),Toast.LENGTH_SHORT).show()
                 }
             }
@@ -89,6 +97,7 @@ class SignUp : BaseFragmentWithBinding<FragmentSignUpBinding>(
                     findNavController().navigate(R.id.home2)
                 } else {
                     binding.progressBar.visibility = View.GONE
+                    Log.d("SignUp",task.exception.toString())
                     Toast.makeText(requireContext(),"Sign up Failed: ${task.exception}",Toast.LENGTH_SHORT).show()
                 }
             }

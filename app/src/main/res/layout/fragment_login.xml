@@ -99,6 +99,7 @@
             android:layout_marginEnd="16dp"
             android:fontFamily="serif"
             android:text="@string/forget_password"
+            android:visibility="gone"
             android:textColor="@color/txtColorDarkBlue"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etPasswordLayout" />
@@ -174,10 +175,11 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-
             android:background="@drawable/bg_google_btn"
+
             android:gravity="center"
             android:orientation="horizontal"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtOr">
@@ -213,6 +215,7 @@
             android:layout_marginBottom="16dp"
             android:gravity="center"
             android:orientation="horizontal"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -237,6 +240,13 @@
                 android:textColor="@color/txtColorDarkBlue"
                 android:textStyle="bold" />
         </LinearLayout>
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="txtOr,line1,line2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

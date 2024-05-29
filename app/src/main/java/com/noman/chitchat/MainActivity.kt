@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         binding.ivBack.setOnClickListener{
             navController.popBackStack()
         }
-        navController.addOnDestinationChangedListener{ controller, destination, arguments ->
+        navController.addOnDestinationChangedListener{ _, destination, _ ->
             when(destination.id){
                 R.id.splash, R.id.login, R.id.conversation ->{
                     binding.ivBack.visibility = View.GONE

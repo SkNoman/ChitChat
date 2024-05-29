@@ -86,7 +86,7 @@ class Home : BaseFragmentWithBinding<FragmentHomeBinding>(
             LinearLayoutManager(activity,LinearLayoutManager.HORIZONTAL,false)
         binding.horizontalUserListRecyclerView.adapter =
             UserHorizontalListAdapter(requireContext(),userInfoList,this)
-        Log.e("nlog",userInfoList[1].name.toString())
+
 
     }
 

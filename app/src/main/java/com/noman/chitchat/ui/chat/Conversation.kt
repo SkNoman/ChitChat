@@ -2,11 +2,7 @@ package com.noman.chitchat.ui.chat
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.view.WindowManager
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -42,8 +38,9 @@ class Conversation : BaseFragmentWithBinding<FragmentConversationBinding>(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        requireActivity().window.setFlags(WindowManager.LayoutParams.FLAG_SECURE,
-            WindowManager.LayoutParams.FLAG_SECURE);
+     /*   requireActivity().window.setFlags(WindowManager.LayoutParams.FLAG_SECURE,
+            WindowManager.LayoutParams.FLAG_SECURE);*/
+
         mDbRef = FirebaseDatabase.getInstance().reference
         binding.ivBack.setOnClickListener{
             findNavController().popBackStack()

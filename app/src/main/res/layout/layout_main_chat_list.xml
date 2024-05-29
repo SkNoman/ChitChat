@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/bg_chat_item"
     android:padding="5dp"
     android:layout_marginBottom="@dimen/_10dp"
     android:layout_width="match_parent"
@@ -10,8 +9,8 @@
 
     <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/userIcon"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -25,16 +24,17 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:maxLines="1"
-        tools:text="Jakaria Islam"
+        tools:text="Abdullah-Al-Noman"
         android:textSize="16sp"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toStartOf="@+id/ivUserSeenStatusIcon"
         app:layout_constraintStart_toEndOf="@+id/userIcon"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/ivUserSeenStatusIcon"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:riv_corner_radius="@dimen/_50dp"
@@ -49,11 +49,22 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:maxLines="2"
+        android:maxLines="1"
         tools:text="Asslamu Alaikum! How are you doing. Hope your are fine"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/userIcon"
         app:layout_constraintTop_toBottomOf="@+id/ivUserSeenStatusIcon" />
+
+    <ImageView
+        android:id="@+id/userActiveDot"
+        android:layout_width="@dimen/_15dp"
+        android:layout_height="@dimen/_15dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/baseline_circle_24"
+        android:layout_margin="2dp"
+        android:background="@drawable/active_dot_round_bg"
+        app:layout_constraintBottom_toBottomOf="@+id/userIcon"
+        app:layout_constraintEnd_toEndOf="@+id/userIcon" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
