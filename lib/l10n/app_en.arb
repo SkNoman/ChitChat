@@ -2,5 +2,6 @@
   "@@locale": "en",
   "hello": "Hello",
   "welcome": "Welcome to Chit Chat",
-  "chitChat": "Chit Chat"
+  "chitChat": "Chit Chat",
+  "userName": "Username"
 }

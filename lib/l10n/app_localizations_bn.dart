@@ -16,4 +16,7 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get chitChat => 'Chit Chat';
+
+  @override
+  String get userName => 'Username';
 }

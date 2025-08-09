@@ -115,6 +115,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Chit Chat'**
   String get chitChat;
+
+  /// No description provided for @userName.
+  ///
+  /// In en, this message translates to:
+  /// **'Username'**
+  String get userName;
 }
 
 class _AppLocalizationsDelegate
