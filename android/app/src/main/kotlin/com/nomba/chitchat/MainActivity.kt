@@ -1,4 +1,4 @@
-package com.example.chit_chat
+package com.nomba.chitchat
 
 import io.flutter.embedding.android.FlutterActivity
 
